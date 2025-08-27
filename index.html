@@ -548,6 +548,26 @@
             <label>Date (GE):</label>
             <input type="date" class="form-control" id="matchDatePicker" placeholder="DD/MM/YYYY">
         </div>
+        <div class="form-group">
+            <label>CC:</label>
+            <input type="text" class="form-control" id="ccField">
+        </div>
+        <div class="form-group">
+            <label>NC:</label>
+            <input type="text" class="form-control" id="ncField">
+        </div>
+        <div class="form-group">
+            <label>PV:</label>
+            <input type="text" class="form-control" id="pvField">
+        </div>
+        <div class="form-group">
+            <label>TM:</label>
+            <input type="text" class="form-control" id="tmField">
+        </div>
+        <div class="form-group">
+            <label>NP:</label>
+            <input type="text" class="form-control" id="npField">
+        </div>
 
         <!-- Right Column: Match Metadata -->
         <div class="form-group">
@@ -716,6 +736,11 @@
                 bonusAmount: bonusAmount,
                 matches: matches,
                 betAmount: betAmount,
+                cc: document.getElementById('ccField').value.trim(),
+                nc: document.getElementById('ncField').value.trim(),
+                pv: document.getElementById('pvField').value.trim(),
+                tm: document.getElementById('tmField').value.trim(),
+                np: document.getElementById('npField').value.trim(),
                 imageUrls: imageUrls
             };
 
