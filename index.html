@@ -49,7 +49,6 @@
             font-family: Arial, sans-serif !important;
             font-size: 11px !important; /* Increased from 8px */
             font-weight: bold !important;
-<!--            margin: 3px 0 !important; /* Slightly more vertical space */-->
         }
 
         /* 6. Match details */
@@ -548,26 +547,6 @@
             <label>Date (GE):</label>
             <input type="date" class="form-control" id="matchDatePicker" placeholder="DD/MM/YYYY">
         </div>
-        <div class="form-group">
-            <label>CC:</label>
-            <input type="text" class="form-control" id="ccField">
-        </div>
-        <div class="form-group">
-            <label>NC:</label>
-            <input type="text" class="form-control" id="ncField">
-        </div>
-        <div class="form-group">
-            <label>PV:</label>
-            <input type="text" class="form-control" id="pvField">
-        </div>
-        <div class="form-group">
-            <label>TM:</label>
-            <input type="text" class="form-control" id="tmField">
-        </div>
-        <div class="form-group">
-            <label>NP:</label>
-            <input type="text" class="form-control" id="npField">
-        </div>
 
         <!-- Right Column: Match Metadata -->
         <div class="form-group">
@@ -589,6 +568,32 @@
         <div class="form-group">
             <label>Match Time:</label>
             <input type="text" class="form-control" id="timeField">
+        </div>
+
+        <!-- New Fields: CC, NC, PV, TM, NP -->
+        <div class="form-group">
+            <label>CC:</label>
+            <input type="text" class="form-control" id="ccField" value="4098">
+        </div>
+        <div class="form-group">
+            <label>NC:</label>
+            <input type="text" class="form-control" id="ncField" value="GBO Italy S.p.A">
+        </div>
+        <div class="form-group">
+            <label>PV:</label>
+            <input type="text" class="form-control" id="pvField" value="14274">
+        </div>
+        <div class="form-group">
+            <label>TM:</label>
+            <input type="text" class="form-control" id="tmField" value="4">
+        </div>
+        <div class="form-group">
+            <label>NP:</label>
+            <input type="text" class="form-control" id="npField" value="Lignano Sabbiadoro, Via Arcobalen">
+        </div>
+        <div class="form-group">
+            <label>CG:</label>
+            <input type="text" class="form-control" id="cgField" value="2005376">
         </div>
 
         <!-- Buttons -->
@@ -741,6 +746,7 @@
                 pv: document.getElementById('pvField').value.trim(),
                 tm: document.getElementById('tmField').value.trim(),
                 np: document.getElementById('npField').value.trim(),
+                cg: document.getElementById('cgField').value.trim(),
                 imageUrls: imageUrls
             };
 
@@ -1089,7 +1095,7 @@
 
         // Clear all input fields except defaults
         const preserveFields = ['quotaTypeField', 'betTypeField', 'betChosenField',
-        'tgField', 'ibField', 'nsField', 'sportField'];
+        'tgField', 'ibField', 'nsField', 'sportField', 'ccField', 'ncField', 'pvField', 'tmField', 'npField', 'cgField'];
 
         document.querySelectorAll('input[type="text"], input[type="number"]').forEach(input => {
             if (!preserveFields.includes(input.id)) {
@@ -1127,7 +1133,6 @@
             <div class="ticket">
                 <div class="ticket-header">
                     <img src="${ticketData.imageUrls.logo}" alt="Logo" class="ticket-logo">
-<!--                    <div class="ticket-title">GoldBet</div>-->
                     <img src="https://i.ibb.co/spL1p47B/6db9b7f1-1ac8-4b30-9925-07b9a890ba72.jpg"
                          alt="GoldBet"
                          class="ticket-title-image"
@@ -1143,19 +1148,19 @@
                 <div class="ticket-details">
                     <div>CB-<strong>${ticketData.ticketCode}</strong></div>
                     <div class="ticket-meta-line">
-                        <span>CC-<strong>4098</strong></span>
-                        <span>NC-<strong>GBO Italy S.p.A</strong></span>
-                        <span>PV-<strong>14274</strong></span>
-                        <span>TM-<strong>4</strong></span>
+                        <span>CC-<strong>${ticketData.cc}</strong></span>
+                        <span>NC-<strong>${ticketData.nc}</strong></span>
+                        <span>PV-<strong>${ticketData.pv}</strong></span>
+                        <span>TM-<strong>${ticketData.tm}</strong></span>
                     </div>
                     <div class="ticket-meta-line">
-                        <span>NP-<strong>Lignano Sabbiadoro, Via Arcobalen</strong></span>
+                        <span>NP-<strong>${ticketData.np}</strong></span>
                         <span>TG-<strong>${ticketData.tg}</strong></span>
                     </div>
                     <div class="ticket-meta-line">
                         <span>GE-<strong>${formatDate(ticketData.date)}</strong></span>
                         <span>OE-<strong>${ticketData.timestamp}</strong></span>
-                        <span>CG-<strong>2005376</strong></span>
+                        <span>CG-<strong>${ticketData.cg}</strong></span>
                     </div>
                     <div class="ticket-meta-line">
                         <span>IB-<strong>${ticketData.ib}</strong></span>
@@ -1261,10 +1266,6 @@
         return number.toFixed(2).replace('.', ',');
     }
 
-<!--    function formatDate(dateString) {-->
-<!--        const date = new Date(dateString);-->
-<!--        return date.toLocaleDateString('en-GB').replace(/\//g, '/');-->
-<!--    }-->
     function formatDate(dateString) {
         const months = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu',
                         'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
