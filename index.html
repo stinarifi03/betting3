@@ -480,137 +480,153 @@
 <div class="container">
     <div class="header-label">Soccer Betting Ticket Generator</div>
 
-    <div class="form-grid">
-        <!-- Left Column: Match Details -->
-        <div class="form-group">
-            <label>Team 1:</label>
-            <input type="text" class="form-control" id="team1Field">
-        </div>
-        <div class="form-group">
-            <label>Team 2:</label>
-            <input type="text" class="form-control" id="team2Field">
-        </div>
-        <div class="form-group">
-            <label>Odds:</label>
-            <input type="number" step="0.01" class="form-control" id="oddsField">
-        </div>
-        <div class="form-group">
-            <label>Bet Amount:</label>
-            <input type="number" step="0.01" class="form-control" id="betAmountField">
-        </div>
-        <div class="form-group">
-            <label>Quota Type:</label>
-            <select class="form-control" id="quotaTypeField">
-                <option value="SINGOLA QUOTA FISSA">SINGOLA QUOTA FISSA</option>
-                <option value="MULTIPLA QUOTA FISSA">MULTIPLA QUOTA FISSA</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>League Name:</label>
-            <input type="text" class="form-control" id="leagueNameField">
-        </div>
-        <div class="form-group">
-            <label>Bet Type:</label>
-            <input type="text" class="form-control" id="betTypeField" value="1X2">
-        </div>
-        <div class="form-group">
-            <label>Bet Chosen:</label>
-            <input type="text" class="form-control" id="betChosenField" value="1">
-        </div>
-        <div class="form-group hidden" id="bonusGroup">
-            <label>Bonus:</label>
-            <input type="number" step="0.01" class="form-control" id="bonusField" value="0">
-        </div>
+    <div class="form-container">
+        <div class="row">
+            <!-- Left Column: Match Details -->
+            <div class="col-md-4 form-section">
+                <h5>Match Details</h5>
+                <div class="form-group">
+                    <label>Team 1:</label>
+                    <input type="text" class="form-control" id="team1Field">
+                </div>
+                <div class="form-group">
+                    <label>Team 2:</label>
+                    <input type="text" class="form-control" id="team2Field">
+                </div>
+                <div class="form-group">
+                    <label>Odds:</label>
+                    <input type="number" step="0.01" class="form-control" id="oddsField">
+                </div>
+                <div class="form-group">
+                    <label>Bet Amount:</label>
+                    <input type="number" step="0.01" class="form-control" id="betAmountField">
+                </div>
+                <div class="form-group">
+                    <label>Quota Type:</label>
+                    <select class="form-control" id="quotaTypeField">
+                        <option value="SINGOLA QUOTA FISSA">SINGOLA QUOTA FISSA</option>
+                        <option value="MULTIPLA QUOTA FISSA">MULTIPLA QUOTA FISSA</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>League Name:</label>
+                    <input type="text" class="form-control" id="leagueNameField">
+                </div>
+                <div class="form-group">
+                    <label>Bet Type:</label>
+                    <input type="text" class="form-control" id="betTypeField" value="1X2">
+                </div>
+                <div class="form-group">
+                    <label>Bet Chosen:</label>
+                    <input type="text" class="form-control" id="betChosenField" value="1">
+                </div>
+                <div class="form-group hidden" id="bonusGroup">
+                    <label>Bonus:</label>
+                    <input type="number" step="0.01" class="form-control" id="bonusField" value="0">
+                </div>
+            </div>
 
-        <!-- Middle Column: Ticket Details -->
-        <div class="form-group">
-            <label>Ticket Code (CB):</label>
-            <input type="text" class="form-control" id="ticketCodeField">
-        </div>
-        <div class="form-group">
-            <label>TG:</label>
-            <input type="text" class="form-control" id="tgField" value="WEB">
-        </div>
-        <div class="form-group">
-            <label>IB:</label>
-            <input type="text" class="form-control" id="ibField" value="INTERNET">
-        </div>
-        <div class="form-group">
-            <label>NS:</label>
-            <input type="text" class="form-control" id="nsField" value="ONLINE">
-        </div>
-        <div class="form-group">
-            <label>Timestamp (OE):</label>
-            <input type="text" class="form-control" id="timestampField">
-        </div>
-        <div class="form-group">
-            <label>Date (GE):</label>
-            <input type="date" class="form-control" id="matchDatePicker" placeholder="DD/MM/YYYY">
-        </div>
+            <!-- Middle Column: Ticket Details -->
+            <div class="col-md-4 form-section">
+                <h5>Ticket Details</h5>
+                <div class="form-group">
+                    <label>Ticket Code (CB):</label>
+                    <input type="text" class="form-control" id="ticketCodeField">
+                </div>
+                <div class="form-group">
+                    <label>TG:</label>
+                    <input type="text" class="form-control" id="tgField" value="WEB">
+                </div>
+                <div class="form-group">
+                    <label>IB:</label>
+                    <input type="text" class="form-control" id="ibField" value="INTERNET">
+                </div>
+                <div class="form-group">
+                    <label>NS:</label>
+                    <input type="text" class="form-control" id="nsField" value="ONLINE">
+                </div>
+                <div class="form-group">
+                    <label>Timestamp (OE):</label>
+                    <input type="text" class="form-control" id="timestampField">
+                </div>
+                <div class="form-group">
+                    <label>Date (GE):</label>
+                    <input type="date" class="form-control" id="matchDatePicker" placeholder="DD/MM/YYYY">
+                </div>
+            </div>
 
-        <!-- Right Column: Match Metadata -->
-        <div class="form-group">
-            <label>Match ID:</label>
-            <input type="text" class="form-control" id="matchIdField">
-        </div>
-        <div class="form-group">
-            <label>Code:</label>
-            <input type="text" class="form-control" id="codeField">
-        </div>
-        <div class="form-group">
-            <label>Sport Type:</label>
-            <input type="text" class="form-control" id="sportField" value="FOOTBALL">
-        </div>
-        <div class="form-group">
-            <label>Match Date:</label>
-            <input type="text" class="form-control" id="dateField">
-        </div>
-        <div class="form-group">
-            <label>Match Time:</label>
-            <input type="text" class="form-control" id="timeField">
-        </div>
+            <!-- Right Column: Match Metadata -->
+            <div class="col-md-4 form-section">
+                <h5>Match Metadata</h5>
+                <div class="form-group">
+                    <label>Match ID:</label>
+                    <input type="text" class="form-control" id="matchIdField">
+                </div>
+                <div class="form-group">
+                    <label>Code:</label>
+                    <input type="text" class="form-control" id="codeField">
+                </div>
+                <div class="form-group">
+                    <label>Sport Type:</label>
+                    <input type="text" class="form-control" id="sportField" value="FOOTBALL">
+                </div>
+                <div class="form-group">
+                    <label>Match Date:</label>
+                    <input type="text" class="form-control" id="dateField">
+                </div>
+                <div class="form-group">
+                    <label>Match Time:</label>
+                    <input type="text" class="form-control" id="timeField">
+                </div>
 
-        <!-- New Fields: CC, NC, PV, TM, NP -->
-        <div class="form-group">
-            <label>CC:</label>
-            <input type="text" class="form-control" id="ccField" value="4098">
+                <!-- New Fields: CC, NC, PV, TM, NP, CG -->
+                <h5>Ticket Metadata</h5>
+                <div class="form-group">
+                    <label>CC:</label>
+                    <input type="text" class="form-control" id="ccField" value="4098">
+                </div>
+                <div class="form-group">
+                    <label>NC:</label>
+                    <input type="text" class="form-control" id="ncField" value="GBO Italy S.p.A">
+                </div>
+                <div class="form-group">
+                    <label>PV:</label>
+                    <input type="text" class="form-control" id="pvField" value="14274">
+                </div>
+                <div class="form-group">
+                    <label>TM:</label>
+                    <input type="text" class="form-control" id="tmField" value="4">
+                </div>
+                <div class="form-group">
+                    <label>NP:</label>
+                    <input type="text" class="form-control" id="npField" value="Lignano Sabbiadoro, Via Arcobalen">
+                </div>
+                <div class="form-group">
+                    <label>CG:</label>
+                    <input type="text" class="form-control" id="cgField" value="2005376">
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label>NC:</label>
-            <input type="text" class="form-control" id="ncField" value="GBO Italy S.p.A">
-        </div>
-        <div class="form-group">
-            <label>PV:</label>
-            <input type="text" class="form-control" id="pvField" value="14274">
-        </div>
-        <div class="form-group">
-            <label>TM:</label>
-            <input type="text" class="form-control" id="tmField" value="4">
-        </div>
-        <div class="form-group">
-            <label>NP:</label>
-            <input type="text" class="form-control" id="npField" value="Lignano Sabbiadoro, Via Arcobalen">
-        </div>
-        <div class="form-group">
-            <label>CG:</label>
-            <input type="text" class="form-control" id="cgField" value="2005376">
-        </div>
+    </div>
 
-        <!-- Buttons -->
-        <div class="form-group">
-            <button class="btn btn-primary" id="addMatchBtn">Add Match</button>
-            <div id="addMatchStatus" class="status-message"></div>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-success" id="generateTicketBtn">Generate Ticket</button>
-            <div id="generateTicketStatus" class="status-message"></div>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-info" id="printTicketBtn">Print Ticket</button>
-            <div id="printTicketStatus" class="status-message"></div>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-warning" id="clearBtn">Clear All</button>
+    <!-- Buttons Row -->
+    <div class="row mt-3">
+        <div class="col-md-12 d-flex justify-content-between">
+            <div class="form-group">
+                <button class="btn btn-primary" id="addMatchBtn">Add Match</button>
+                <div id="addMatchStatus" class="status-message"></div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" id="generateTicketBtn">Generate Ticket</button>
+                <div id="generateTicketStatus" class="status-message"></div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info" id="printTicketBtn">Print Ticket</button>
+                <div id="printTicketStatus" class="status-message"></div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-warning" id="clearBtn">Clear All</button>
+            </div>
         </div>
     </div>
 
@@ -622,6 +638,7 @@
     </div>
 </div>
 
+<!-- The rest of your JavaScript code remains exactly the same -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
 <script>
@@ -1212,7 +1229,7 @@
                     <div class="ticket-winnings-pattern"></div>
                 </div>
                 <div class="ticket-disclaimer">
-                    Consulta le probabilità di vincita e i regolamenti di gioco su goldbet.it.<br>
+                    Consulta le probabilità di vincita e i regolamenti de gioco su goldbet.it.<br>
                     Il gioco è vietato ai minori di 18 anni e può causare dipendenza patologica.
                 </div>
 
